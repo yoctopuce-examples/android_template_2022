@@ -99,8 +99,8 @@ public class FirstFragment extends Fragment
                     _sensor = YTemperature.FirstTemperature();
                 }
                 if (_sensor != null && _sensor.isOnline()) {
-                    final String text = String.format(Locale.US, "%.2f °C",
-                            _sensor.get_currentValue());
+                    final String text = String.format(Locale.US, "%.2f %s",
+                            _sensor.get_currentValue(), _sensor.get_unit());
                     binding.temperature.setText(text);
                 } else {
                     binding.temperature.setText("OFFLINE");
